@@ -177,7 +177,6 @@ register_activation_hook( __FILE__, 'rewrite_ctas_flush' );
 /**
  * Add custom column to Post listing page
  */
-add_filter( 'manage_ctas_posts_columns', 'set_custom_edit_ctas_columns' );
 function set_custom_edit_ctas_columns( $columns ) {
     
     $columns['cta_shortcode'] 	= __( 'Shortcode', 'ctarc-plugin' );	   
@@ -186,11 +185,11 @@ function set_custom_edit_ctas_columns( $columns ) {
 
     return $columns;
 }
+add_filter( 'manage_ctas_posts_columns', 'set_custom_edit_ctas_columns' );
 
 /**
  * Add custom column data to Post listing page
  */
-add_action( 'manage_ctas_posts_custom_column' , 'custom_ctas_column', 10, 2 );
 function custom_ctas_column( $column, $post_id ) {
 
     //$prefix = CTAS_META_PREFIX; // Taking metabox prefix
@@ -204,6 +203,7 @@ function custom_ctas_column( $column, $post_id ) {
         
     }
 }
+add_action( 'manage_ctas_posts_custom_column' , 'custom_ctas_column', 10, 2 );
 
 /**
  * Enqueue the style
