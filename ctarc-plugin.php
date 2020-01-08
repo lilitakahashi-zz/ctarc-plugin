@@ -149,7 +149,7 @@ function cta_banner_function($atts)
 	global $post;
 	
 	$atts   = shortcode_atts( [
-        'id'  => '',
+		'id'  => '',
 	], $atts );
 	
 	$post_id = $atts['id'];
