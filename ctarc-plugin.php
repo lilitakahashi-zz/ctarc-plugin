@@ -157,8 +157,6 @@ function cta_banner_function($atts)
 	$banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), array(960, 300) );
 	$url = get_post_meta( $post_id, 'link', TRUE );
     
-
-    
     $content = '<div class="banner_wrapper">';
     $content .= '<a href="'. $url .'" target="_blank">';
     $content .= '<img src="' . $banner[0] . '" class="foo">';
